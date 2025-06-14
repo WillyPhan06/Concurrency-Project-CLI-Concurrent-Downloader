@@ -1,5 +1,6 @@
 import argparse
 import os
+from downloader.asyncio_downloader import AsyncioDownloader
 
 from downloader.threading_downloader import ThreadingDownloader
 # from downloader.asyncio_downloader import AsyncioDownloader (for later)
@@ -13,16 +14,22 @@ def load_urls_from_file(file_path):
 
 def main():
     parser = argparse.ArgumentParser(description="Concurrent Downloader CLI")
-    parser.add_argument('--method', choices=['threading'], required=True, help='Concurrency method')
+    parser.add_argument('--method', choices=['threading', 'asyncio','multiprocessing'], required=True, help='Concurrency method')
     parser.add_argument('--url-file', required=True, help='Path to file containing URLs (1 per line)')
     parser.add_argument('--output-dir', required=True, help='Directory to save downloaded files')
-
+    
     args = parser.parse_args()
 
     urls = load_urls_from_file(args.url_file)
 
     if args.method == 'threading':
         downloader = ThreadingDownloader(urls, args.output_dir)
+    elif args.method == 'asyncio':
+        downloader = AsyncioDownloader(urls, args.output_dir)
+    elif args.method == "multiprocessing":
+        from downloader.multiprocessing_downloader import MultiprocessingDownloader
+        downloader = MultiprocessingDownloader(urls, args.output_dir)
+        downloader.download()
     else:
         raise ValueError("Unsupported method (yet)")
 
