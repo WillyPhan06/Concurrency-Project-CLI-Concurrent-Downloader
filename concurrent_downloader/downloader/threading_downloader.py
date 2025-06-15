@@ -4,6 +4,7 @@ import requests
 from tqdm import tqdm
 from .base import BaseDownloader
 from .logger import Logger
+import time
 
 
 class ThreadingDownloader(BaseDownloader):
@@ -36,6 +37,7 @@ class ThreadingDownloader(BaseDownloader):
 
 
     def download(self):
+        start = time.time()
         threads = []
         for url in self.urls:
             thread = threading.Thread(target=self.download_file, args=(url,))
@@ -45,3 +47,4 @@ class ThreadingDownloader(BaseDownloader):
         for t in threads:
             t.join()
         print("✅ All downloads completed.\n")
+        print(f"✅ All took total of {time.time() - start:.2f} seconds")

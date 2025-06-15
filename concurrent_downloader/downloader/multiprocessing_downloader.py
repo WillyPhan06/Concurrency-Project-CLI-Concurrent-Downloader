@@ -1,5 +1,5 @@
 # downloader/multiprocessing_downloader.py
-
+import time
 import os
 import requests
 from tqdm import tqdm
@@ -39,6 +39,7 @@ class MultiprocessingDownloader(BaseDownloader):
         os.makedirs(self.output_dir, exist_ok=True)
 
     def download(self):
+        start = time.time()
         print("🚀 Starting multiprocessing downloads...\n")
         with Pool(processes=4) as pool:  # Adjust based on your CPU
             results = pool.map(download_file_multiprocess, [(url, self.output_dir) for url in self.urls])
@@ -46,3 +47,4 @@ class MultiprocessingDownloader(BaseDownloader):
         for result in results:
             print(result)
         print("✅ All multiprocessing downloads completed.\n")
+        print(f"✅ All took total of {time.time() - start:.2f} seconds")

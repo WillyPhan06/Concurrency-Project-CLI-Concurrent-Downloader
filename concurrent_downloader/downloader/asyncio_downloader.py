@@ -1,5 +1,5 @@
 # downloader/asyncio_downloader.py
-
+import time
 import os
 import asyncio
 import aiohttp
@@ -53,5 +53,7 @@ class AsyncioDownloader(BaseDownloader):
 
 
     def download(self):
+        start = time.time()
         asyncio.run(self.run())
         print("✅ All async downloads completed.\n")
+        print(f"✅ All took total of {time.time() - start:.2f} seconds")
