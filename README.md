@@ -1,15 +1,3 @@
 # Concurrency-Project-CLI-Concurrent-Downloader
-Hi! This is a big project from the topic Concurrency from my Software Architect and DevSecOps engineer road map. For the concurrency project, I'm creating a CLI (Command-line Interface) Concurrent Downloader to download content from such websites concurrently!
-Step 0: Clone this repo to your machine
-Step 1: Setup venv
-Step 2: Edit urls in urls.txt for websites you want to download content
-Step 3: Make sure to cd to the cloned file with tail "\Concurrency-Project-CLI-Concurrent-Downloader"
-Step 4: In terminal you have these following options:
-+Download using threading: 
-python concurrent_downloader/main.py --method threading --url-file urls.txt --output-dir downloads
-+Download using asyncio:
-python concurrent_downloader/main.py --method asyncio --url-file urls.txt --output-dir downloads
-+Download using multiprocessing
-python concurrent_downloader/main.py --method multiprocessing --url-file urls.txt --output-dir downloads
-Step 5: Wait for it to announce done as well as show time finished
-Step 6: Check "downloads" for downloaded content. If you downloaded using threading or asyncio, you can check log.txt inside "downloads" for more details about the download process
+Hi! This is a big project from the topic Concurrency from my Software Architect and DevSecOps engineer road map. For the concurrency project, I'm creating a CLI (Command-line Interface) Concurrent Downloader to download content from such websites concurrently! Check out instructions in how_to_use.txt! 😎
+
