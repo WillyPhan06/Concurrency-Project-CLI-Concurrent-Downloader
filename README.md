@@ -3,7 +3,7 @@ Hi! This is a big project from the topic Concurrency from my Software Architect 
 
 For the concurrency project, I'm creating a CLI (Command-line Interface) Concurrent Downloader to download data from such websites concurrently!
 
-Follow instructions below the high level diagram or check how_to_use.txt in the repo.
+Follow instructions at the bottom or check how_to_use.txt in the repo.
 
 Check out my benchmark and analysis comparing downloading using threading, asyncio, and multiprocessing of 10 URLS and 100 URLS in my Road Map Repo:
 
@@ -24,6 +24,7 @@ Python 3.10+
 **🧠 Step-by-Step Instructions**
 
 **🔧 Step 0: Clone the Repository**
+
 _Open VS Code_
 _Press Ctrl + ~ to open the terminal_
 
@@ -31,7 +32,7 @@ _Navigate to a folder where you want to store the project:_
 cd path/to/your/folder
 
 _Clone the repo:_
-git clone https://github.com/WillyPhan06/Concurrency-Project-CLI-Concurrent-Downloader.git
+git clone https://github.com/WillyPhan06/Concurrency-Project-CLI-Concurrent-Downloader
 
 _Navigate into the project folder:_
 cd Concurrency-Project-CLI-Concurrent-Downloader
