@@ -1,13 +1,70 @@
-Step 0: Clone this repo to your machine
-Step 1: Setup venv
-Step 2: Edit urls in urls.txt for websites you want to download content
-Step 3: Make sure to cd to the cloned file with tail "\Concurrency-Project-CLI-Concurrent-Downloader"
-Step 4: In terminal you have these following options:
-+Download using threading: 
+📘 HOW TO USE - Concurrent Downloader CLI Tool
+This project allows you to download multiple files concurrently using threading, asyncio, or multiprocessing in Python.
+
+✅ Requirements
+Python 3.10+
+
+Visual Studio Code (VS Code) is recommended
+
+🧠 Step-by-Step Instructions
+
+🔧 Step 0: Clone the Repository
+Open VS Code
+Press Ctrl + ~ to open the terminal
+Navigate to a folder where you want to store the project:
+cd path/to/your/folder
+
+Clone the repo:
+git clone https://github.com/WillyPhan06/Concurrency-Project-CLI-Concurrent-Downloader.git
+
+Navigate into the project folder:
+cd Concurrency-Project-CLI-Concurrent-Downloader
+
+🐍 Step 1: Set Up Virtual Environment
+Run the following command to create a virtual environment:
+python -m venv venv
+
+Activate the virtual environment:
+On Windows (CMD):
+venv\Scripts\activate
+
+On Windows PowerShell (recommended if you are using terminal of VSCode in Window):
+.\venv\Scripts\Activate.ps1
+
+On Mac/Linux:
+source venv/bin/activate
+
+Install dependencies (if any are added in future):
+pip install -r requirements.txt
+
+🌐 Step 2: Edit urls.txt
+Open urls.txt in VS Code.
+Add one URL per line that you want to download content from.
+Example:
+https://example.com/file1.jpg
+https://example.com/file2.jpg
+
+📥 Step 3: Run the Downloader
+Make sure you're in the main project folder (Concurrency-Project-CLI-Concurrent-Downloader).
+Choose one of the following methods:
+
+▶️ Download using Threading:
 python concurrent_downloader/main.py --method threading --url-file urls.txt --output-dir downloads
-+Download using asyncio:
+
+▶️ Download using Asyncio:
 python concurrent_downloader/main.py --method asyncio --url-file urls.txt --output-dir downloads
-+Download using multiprocessing
+
+▶️ Download using Multiprocessing:
 python concurrent_downloader/main.py --method multiprocessing --url-file urls.txt --output-dir downloads
-Step 5: Wait for it to announce done as well as show time finished
-Step 6: Check "downloads" for downloaded content. If you downloaded using threading or asyncio, you can check log.txt inside "downloads" for more details about the download process
+
+⏳ Step 4: Wait for Completion
+The terminal will show a "Done" message along with the total time taken.
+Progress and status will be printed while downloading.
+
+📁 Step 5: Check Your Downloads
+All downloaded files will be saved inside the downloads/ folder.
+If you used threading or asyncio, a log.txt file will also be generated inside downloads/, containing detailed logs of the download process.
+
+💡 Tips
+Make sure the URLs in urls.txt are valid and accessible.
+To restart, just clear downloads/ and re-run a method.
