@@ -5,6 +5,10 @@ For the concurrency project, I'm creating a CLI (Command-line Interface) Concurr
 
 Follow instructions at the bottom or check how_to_use.txt in the repo.
 
+Check out my 2nd concurrency project which is basically still CLI Concurrent Downloader but all coded from scratch with lack external help from AI or other code refeences that improves and make more features of this Project 1 as well as fixing edge cases and better error handling in code logic:
+
+https://github.com/WillyPhan06/Concurrency-Project-2-CLI-Concurrent-Downloader-With-Improvements-On-Features-and-Benchmarks
+
 Check out my benchmark and analysis comparing downloading using threading, asyncio, and multiprocessing of 10 URLS and 100 URLS in my Road Map Repo:
 
 https://github.com/WillyPhan06/Software-Architect-and-DevSecOps-Engineer-Road-Map/tree/main/Concurrency/FinalProject.
@@ -17,6 +21,7 @@ Below is high level design of my CLI Concurrent Downloader!
 This project allows you to download multiple files concurrently using threading, asyncio, or multiprocessing in Python.
 
 **✅ Requirements**
+
 Python 3.10+
 
 **Visual Studio Code (VS Code) is recommended**
@@ -38,6 +43,7 @@ _Navigate into the project folder:_
 cd Concurrency-Project-CLI-Concurrent-Downloader
 
 **🐍 Step 1: Set Up Virtual Environment**
+
 _Run the following command to create a virtual environment:_
 python -m venv venv
 
@@ -56,6 +62,7 @@ _Install dependencies (if any are added in future):_
 pip install -r requirements.txt
 
 **🌐 Step 2: Edit urls.txt**
+
 _Open urls.txt in VS Code._
 _Add one URL per line that you want to download content from._
 
@@ -78,15 +85,21 @@ _▶️ Download using Multiprocessing:_
 python concurrent_downloader/main.py --method multiprocessing --url-file urls.txt --output-dir downloads
 
 **⏳ Step 4: Wait for Completion**
+
 _The terminal will show a "Done" message along with the total time taken._
+
 _Progress and status will be printed while downloading._
 
 **📁 Step 5: Check Your Downloads**
+
 _All downloaded files will be saved inside the downloads/ folder._
+
 _If you used threading or asyncio, a log.txt file will also be generated inside downloads/, containing detailed logs of the download process._
 
 **💡 Tips**
+
 _Make sure the URLs in urls.txt are valid and accessible._
+
 _To restart, just clear downloads/ and re-run a method._
 
 
